@@ -1,0 +1,9 @@
+s=str(input())
+count=s.count("(")
+count1=s.count(")")
+if(s[len(s)-1]=="("):
+    print("-1")
+elif(count==count1):
+    print(count)
+else:
+    print("-1")
