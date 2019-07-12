@@ -65,3 +65,28 @@ print(sum)
 ##i/p:5
       9 -8 5 -2 7
 ##o/p:21(9+5+7)
+
+
+GCD
+n=int(input())
+ar=list(map(int,input().split()))
+ar2=[]
+ar3=[]
+def gcd(a,b):
+    if(a>b):
+        a=a%b
+    else:
+        a=b%a
+    return a
+for i in range(n): 
+    for j in range(n):
+        if(i!=j):
+            ar2.append(ar[j])
+    a=ar2[0]
+    b=ar2[1]
+    g=gcd(a,b)
+    for k in range(2,len(ar2)):
+        g=gcd(g,ar2[k])
+    ar3.append(g)
+    ar2.clear()
+print(max(ar3))
