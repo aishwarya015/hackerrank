@@ -90,3 +90,19 @@ for i in range(n):
     ar3.append(g)
     ar2.clear()
 print(max(ar3))
+
+Write a program to print sum of numbers which are not in the edges of the matrix.
+a=int(input())
+b=int(input())
+s=0
+m=[[0]*b]*a
+m=[[int(input())for i in range (b)]for j in range (a)]
+if(b<=2 and a<=2):
+    s=-1
+else:
+    for i in range(1,a-1):
+        for j in range(1,b-1):
+            s+=m[i][j]
+print(s)
+            
+
