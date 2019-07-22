@@ -1,0 +1,44 @@
+Given an array of size n, containing 1's and 0's.
+Find the minimum number of swap operations to be performed to group all the 1's together.
+
+def swap(arr,n): 
+    ones=0
+    for i in range(n): 
+        if (arr[i] == 1): 
+            ones=ones+1
+    x = ones 
+    max=-500
+    dict={} 
+    if (arr[0]==1): 
+        dict[0]=1
+    for i in range(1,n): 
+        if (arr[i]==1): 
+            dict[i]=dict[i - 1] + 1
+        else: 
+            dict[i]=dict[i - 1] 
+    for i in range(x-1,n): 
+        if (i==(x-1)): 
+            ones=dict[i] 
+        else: 
+            ones=dict[i]-dict[i - x] 
+    if (max<ones): 
+        max=ones 
+        zero=x-max 
+    return zero  
+n=int(input())
+a=list(map(int,input().split()))
+print(swap(a,n)) 
+
+Sample Input 0
+
+5
+1 0 1 0 1
+Sample Output 0
+
+1
+Explanation 0
+
+1 swap operation is enough to group all the 1's together. 
+Here, the 1 at a[4] can be interchanged with 0 at a[1] or 
+the 1 at a[0] can be interchanged with the 0 at a[3].
+The resultant array will be [1,1,1,0,0] or [0,0,1,1,1].
