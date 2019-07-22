@@ -1,0 +1,63 @@
+
+###Two Strings a and b are of different lengths are given.
+Find the minimum number of characters which must be removed to make it an anagrams to each other.
+
+t=int(input())
+while(t!=0):
+    s=list(input())
+    p=list(input())
+    c=0
+    ls=len(s)
+    lp=len(p)
+    for i in s:
+        for j in p:
+            if(i==j):
+                c=c+1
+                
+    a=ls+lp-(c*2)
+    print(a)
+    t=t-1
+ 
+##Sample Input 0
+1
+dct
+tfd
+Sample Output 0
+
+2
+Explanation 0
+
+To make it anagrams to each other: Delete c from dct. Delete f from tfd. print the count of deletion character.
+
+
+##Velski buys an array A of N integer values.In 1 second he can increase value of 
+each array element by 1.He wants each array element's value to become greater than or equal to K.
+Please help velski to find out the minimum time it will take,for him to do so.
+
+t=int(input())
+while(t!=0):
+    n,k=map(int,input().split())
+    a=list(map(int,input().split()))
+    c=[]
+    count=0
+    for i in range(0,len(a)):
+        while(a[i]<k):
+            a[i]=a[i]+1
+            count=count+1
+        c.append(count)
+        count=0
+    print(max(c))
+    t=t-1
+              
+###Sample Input 0
+2
+3 4
+1 2 5
+3 2
+2 5 5
+Sample Output 0
+3
+0
+Explanation 0
+For 1st testcase, In 1 second,array A={2,3,6} In 2 second,array A={3,4,7} In 3 second,array A={4,5,8}
+So,it will take 3 second for all array element to become greater than or equal to K
